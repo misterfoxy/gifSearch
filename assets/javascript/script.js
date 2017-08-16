@@ -4,13 +4,22 @@ $(document).ready(function() {
 
   $('#search').click(function() {
     var searchTerm = $('#searchTerm').val();
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + API_KEY + "&limit=5";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + API_KEY + "&limit=20";
 
     $.ajax({
       url:queryURL,
       method: "GET"
     }).done(function(response){
-      console.log(response);
+
+
+      for (var i = 0; i<response.data.length;i++){
+        var imgSRC = response.data[i].images.fixed_height.url;
+        var embeddedGif = $('<img>');
+        embeddedGif.attr('src', imgSRC);
+        $('.results').append(embeddedGif);
+      }
+
+
     });
 
 
