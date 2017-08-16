@@ -1,8 +1,18 @@
 .results{
-  background: linear-gradient(to left, black, white);
+  background-color: red);
+  border-radius: 10px;
+}
+
+.container-fluid{
+  background-color: #141414;
 }
 
 .resultGif{
   padding: 10px 5px 10px 5px;
-  margin: 10px 5px 10px 5px;
+  margin: 10px 10px 10px 10px;
+}
+
+.resultGif:hover{
+  height: 250px;
+  opacity: 0.5;
 }
