@@ -1,1 +1,8 @@
+.results{
+  background: linear-gradient(to left, black, white);
+}
 
+.resultGif{
+  padding: 10px 5px 10px 5px;
+  margin: 10px 5px 10px 5px;
+}
