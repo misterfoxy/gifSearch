@@ -14,5 +14,13 @@
 
 .resultGif:hover{
   height: 250px;
-  opacity: 0.5;
+}
+
+.hiddenText{
+  color:white;
+  display: none;
+}
+
+.hiddenText:hover{
+  display: block;
 }
