@@ -6,6 +6,21 @@ $(document).ready(function() {
   var stillURL;
   var dataState;
 
+  var topics = ['kenny powers', 'rick sanchez', 'marty mcfly'];
+
+  function renderButtons(){
+    $('#button-row').empty();
+    for(var i=0; i< topics.length; i++){
+      var searchButton = $('<button>');
+      searchButton.addClass('topic');
+      searchButton.attr('data-name', topics[i]);
+      searchButton.text(topics[i]);
+      $('#button-row').append(searchButton);
+    }
+  }
+
+renderButtons();
+
   $('#search').click(function() {
     $('.results').empty();
     var searchTerm = $('#searchTerm').val();
