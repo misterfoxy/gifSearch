@@ -11,16 +11,3 @@
   padding: 10px 5px 10px 5px;
   margin: 10px 10px 10px 10px;
 }
-
-.resultGif:hover{
-  height: 250px;
-}
-
-.hiddenText{
-  color:white;
-  display: none;
-}
-
-.hiddenText:hover{
-  display: block;
-}

@@ -32,9 +32,7 @@ $(document).ready(function() {
 
 
 
-  $('.topic').on("click", function(e) {
-
-    e.preventDefault();
+  function loadGifs() {
 
     $('.results').empty();
     var searchTerm = $(this).attr('data-name');
@@ -84,5 +82,6 @@ console.log(response);
 
 
 
-  });
+  }
+  $(document).on("click", ".topic", loadGifs);
 });
