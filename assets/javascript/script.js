@@ -1,29 +1,44 @@
+var API_KEY= '57de50e67dea471ca5f751740f3ded8e';
+var animateURL;
+var imgSRC;
+var stillURL;
+var dataState;
+
+var topics = ['kenny powers', 'rick sanchez', 'marty mcfly'];
+
+function renderButtons(){
+  $('#button-row').empty();
+  for(var i=0; i< topics.length; i++){
+    var searchButton = $('<button>');
+    searchButton.addClass('topic');
+    searchButton.attr('data-name', topics[i]);
+    searchButton.text(topics[i]);
+    $('#button-row').append(searchButton);
+  }
+}
+
 $(document).ready(function() {
 
-  var API_KEY= '57de50e67dea471ca5f751740f3ded8e';
-  var animateURL;
-  var imgSRC;
-  var stillURL;
-  var dataState;
 
-  var topics = ['kenny powers', 'rick sanchez', 'marty mcfly'];
+  renderButtons();
 
-  function renderButtons(){
-    $('#button-row').empty();
-    for(var i=0; i< topics.length; i++){
-      var searchButton = $('<button>');
-      searchButton.addClass('topic');
-      searchButton.attr('data-name', topics[i]);
-      searchButton.text(topics[i]);
-      $('#button-row').append(searchButton);
-    }
-  }
+  $('#addTopic').on("click", function(e){
+    e.preventDefault();
 
-renderButtons();
+    var newTopic = $('#searchTerm').val().trim();
+    topics.push(newTopic);
+    renderButtons();
+  });
 
-  $('#search').click(function() {
+
+
+  $('.topic').on("click", function(e) {
+
+    e.preventDefault();
+
     $('.results').empty();
-    var searchTerm = $('#searchTerm').val();
+    var searchTerm = $(this).attr('data-name');
+    console.log(searchTerm);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + API_KEY + "&limit=20";
 
     $.ajax({
