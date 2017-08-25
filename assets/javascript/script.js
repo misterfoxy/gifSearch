@@ -4,7 +4,8 @@ var imgSRC;
 var stillURL;
 var dataState;
 
-var topics = ['kenny powers', 'rick sanchez', 'marty mcfly'];
+var topics = ['kenny powers', 'spongebob', 'puppy', 'volleyball', 'regular show', 'law and order', 'seinfeld', 'tom cruise cocktail',
+'rick sanchez', 'marty mcfly', 'dachshund'];
 
 function renderButtons(){
   $('#button-row').empty();
@@ -19,6 +20,7 @@ function renderButtons(){
 
 $(document).ready(function() {
 
+  
 
   renderButtons();
 
@@ -43,7 +45,6 @@ $(document).ready(function() {
       url:queryURL,
       method: "GET"
     }).done(function(response){
-console.log(response);
 
       for (var i = 0; i<response.data.length;i++){
         dataState = "still";
@@ -83,5 +84,6 @@ console.log(response);
 
 
   }
+
   $(document).on("click", ".topic", loadGifs);
 });

@@ -4,10 +4,20 @@
 }
 
 .container-fluid{
-  background-color: #141414;
+  background-color: #57bab3;
 }
 
 .resultGif{
   padding: 10px 5px 10px 5px;
   margin: 10px 10px 10px 10px;
+}
+
+#button-row{
+  padding: 10px 0 10px 0;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+#addTopic{
+  margin-top: 10px;
 }
